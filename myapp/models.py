@@ -2,9 +2,10 @@ from django.db import models
 from django.contrib.auth.models import User
 from datetime import datetime  
 import locale
-
-# Configurar locale para português
-locale.setlocale(locale.LC_TIME, 'pt_BR.utf8')
+try:
+    locale.setlocale(locale.LC_TIME, 'pt_BR.utf8')
+except locale.Error:
+    locale.setlocale(locale.LC_TIME, 'C')  # Fallback para um locale padrão
 
 now = datetime.now()
 time = now.strftime("%d de %B de %Y")
