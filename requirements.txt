@@ -3,4 +3,4 @@ django
 Pillow
 sqlparse
 tzdata
-gunicorn
+
