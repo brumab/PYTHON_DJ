@@ -20,16 +20,16 @@ A blog application developed with Django contains all the essential features of 
 
 <br>
 
-![1](VISUALIZR/IMG1.png)
-![2](VISUALIZR/IMG2.png)
-![3](VISUALIZR/IMG3.png)
-![4](VISUALIZR/IMG4.png)
-![5](VISUALIZR/IMG5.png)
-![6](VISUALIZR/IMG6.png)
-![6](VISUALIZR/IMG7.png)
-![6](VISUALIZR/IMG8.png)
-![6](VISUALIZR/IMG9.png)
-![6](VISUALIZR/IMG10.png)
+![1](VISUALIZAR/IMG1.png)
+![2](VISUALIZAR/IMG2.png)
+![3](VISUALIZAR/IMG3.png)
+![4](VISUALIZAR/IMG4.png)
+![5](VISUALIZAR/IMG5.png)
+![6](VISUALIZAR/IMG6.png)
+![6](VISUALIZAR/IMG7.png)
+![6](VISUALIZAR/IMG8.png)
+![6](VISUALIZAR/IMG9.png)
+![6](VISUALIZAR/IMG10.png)
 <br>
 
 ## Características / Features 
