@@ -70,3 +70,11 @@ Deixe um ⭐️ se você gostou deste projeto!
 
 (English)Leave a ⭐️ if you liked this project!
 
+
+## 👨‍💻 Autor
+
+- [GitHub](https://github.com/brumab) | [LinkedIn](https://www.linkedin.com/in/brumab1122/) | [cv](https://brumab.github.io/cur/)
+
+
+
+
