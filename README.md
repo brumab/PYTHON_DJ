@@ -39,14 +39,14 @@ A blog application developed with Django contains all the essential features of 
 - **Sistema de Login** – O administrador pode acessar o sistema através do login e gerenciar todos os seus recursos.
 - **Blog** – Representa a funcionalidade principal do sistema, onde as postagens são criadas e exibidas.
 - **Mídia** – Nesta seção, é possível visualizar e gerenciar todos os arquivos de mídia carregados no sistema.
-- **Modelo** – Refere-se à estrutura e ao design do sistema, desenvolvidos utilizando HTML, CSS e JavaScript.
+- **Modelo** – Refere-se à estrutura e ao design do sistema, desenvolvidos utilizando HTML, CSS e JavaScript, Bootstrap
 
 (English)
 - **Blog Management** – This feature allows you to perform CRUD (Create, Read, Update and Delete) operations on blog posts, allowing you to add, edit and remove content.
 - **Login System** – The administrator can access the system through the login and manage all its features.
 - **Blog** – Represents the main functionality of the system, where posts are created and displayed.
 - **Media** – In this section, you can view and manage all media files uploaded to the system.
-- **Template** – See the structure and design of the system, developed using HTML, CSS and JavaScript.
+- **Template** – See the structure and design of the system, developed using HTML, CSS and JavaScript, Bootstrap
 
 ## 🛠 Construído com / Built With
 
@@ -55,7 +55,8 @@ A blog application developed with Django contains all the essential features of 
 - JavaScript
 - Python
 - Django
-- Database 
+- Database
+- Bootstrap
 
 
 (Português)
