@@ -15,6 +15,7 @@ A blog application developed with Django contains all the essential features of 
 📸 Preview
 
   <a href="https://python-dj.onrender.com/"><strong>➥ Link </strong></a>
+  https://python-dj.onrender.com/
 
 </div>
 
