@@ -66,17 +66,6 @@ Este é um projeto feito com Django e deployado no Render.
 - [x] Deploy em produção
 
 
-## Como rodar local
-```bash
-git clone https://github.com/brumab/PYTHON_DJ.git
-cd PYTHON_DJ
-pip install -r requirements.txt
-python manage.py runserver
-
-
-
-
-
 Deixe um ⭐️ se você gostou deste projeto!
 
 
@@ -85,6 +74,18 @@ Deixe um ⭐️ se você gostou deste projeto!
 ## 👨‍💻 Autor
 
 - [GitHub](https://github.com/brumab) | [LinkedIn](https://www.linkedin.com/in/brumab1122/) | [cv](https://brumab.github.io/cur/)
+
+
+
+
+
+## Como rodar local
+```bash
+git clone https://github.com/brumab/PYTHON_DJ.git
+cd PYTHON_DJ
+pip install -r requirements.txt
+python manage.py runserver
+
 
 
 
