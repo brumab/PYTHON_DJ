@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 from pathlib import Path
 import os
 import dj_database_url
+from decouple import config
+
 
 
 # Caminho base do projeto
@@ -24,13 +26,15 @@ STATIC_DIR = os.path.join(BASE_DIR, "static")
 MEDIA_DIR = os.path.join(BASE_DIR, "media")
 
 # Chave secreta (importante manter em segredo em produção)
-SECRET_KEY = "django-insecure-s0eg9q5^i%wy4n5m78yvbpwkb3j3u)w8nx=pr&c6+ag8ltvs5t"
+SECRET_KEY = config("SECRET_KEY")
 
 # Modo de depuração (desative em produção)
-DEBUG = True
+DEBUG = config("DEBUG", cast=bool)
+
+
 
 # Hosts permitidos
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = config("ALLOWED_HOSTS").split(",")
 
 # Aplicações instaladas
 INSTALLED_APPS = [
@@ -85,7 +89,7 @@ DATABASES = {
     }
 }
 
-DATABASES["default"] = dj_database_url.parse("postgresql://python_dj_user:ma611chp3sQP1U4aAnNK7t1Gm8ivU8Ny@dpg-d58p9amuk2gs73dphtfg-a.oregon-postgres.render.com/python_dj")
+DATABASES["default"] = dj_database_url.parse(config("DATABASE_URL"))
 
 # Validações de senha
 AUTH_PASSWORD_VALIDATORS = [
