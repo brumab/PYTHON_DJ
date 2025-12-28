@@ -1,7 +1,3 @@
-"""
-Django settings for myproject project.
-"""
-
 from pathlib import Path
 import os
 import dj_database_url
@@ -13,13 +9,6 @@ from decouple import config
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # ======================================================
-# PATHS
-# ======================================================
-TEMP_DIR = os.path.join(BASE_DIR, "templates")
-STATIC_DIR = os.path.join(BASE_DIR, "static")
-MEDIA_DIR = os.path.join(BASE_DIR, "media")
-
-# ======================================================
 # SECURITY
 # ======================================================
 SECRET_KEY = config("SECRET_KEY")
@@ -29,7 +18,7 @@ DEBUG = config("DEBUG", default=False, cast=bool)
 ALLOWED_HOSTS = config(
     "ALLOWED_HOSTS",
     default="localhost,127.0.0.1",
-    cast=lambda v: [s.strip() for s in v.split(",")]
+    cast=lambda v: [host.strip() for host in v.split(",")]
 )
 
 # ======================================================
@@ -62,7 +51,6 @@ MIDDLEWARE = [
 # URLS / WSGI
 # ======================================================
 ROOT_URLCONF = "myproject.urls"
-
 WSGI_APPLICATION = "myproject.wsgi.application"
 
 # ======================================================
@@ -71,7 +59,7 @@ WSGI_APPLICATION = "myproject.wsgi.application"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [TEMP_DIR],
+        "DIRS": [BASE_DIR / "templates"],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -88,9 +76,7 @@ TEMPLATES = [
 # DATABASE
 # ======================================================
 DATABASES = {
-    "default": dj_database_url.parse(
-        config("DATABASE_URL")
-    )
+    "default": dj_database_url.parse(config("DATABASE_URL"))
 }
 
 # ======================================================
@@ -108,32 +94,16 @@ AUTH_PASSWORD_VALIDATORS = [
 # ======================================================
 LANGUAGE_CODE = "pt-br"
 TIME_ZONE = "America/Sao_Paulo"
-
 USE_I18N = True
-USE_L10N = True
 USE_TZ = True
 
 # ======================================================
 # STATIC FILES
 # ======================================================
 STATIC_URL = "/static/"
-
-STATICFILES_DIRS = [STATIC_DIR]
-
-STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
-
-# ======================================================
-# MEDIA FILES
-# ======================================================
-MEDIA_URL = "/media/"
-MEDIA_ROOT = MEDIA_DIR
+STATIC_ROOT = BASE_DIR / "staticfiles"
 
 # ======================================================
 # DEFAULT FIELD
 # ======================================================
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
-
-# ======================================================
-# LOCALE
-# ======================================================
-LOCALE_PATHS = [os.path.join(BASE_DIR, "locale")]
