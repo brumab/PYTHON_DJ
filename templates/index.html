@@ -3,7 +3,6 @@
 <html lang="pt-br">
 
 <head>
-
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
@@ -19,21 +18,17 @@
   <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-</head>
 
-
-<!-- Additional CSS Files -->
-<link rel="stylesheet" href="{% static 'assets/css/fontawesome.css' %}">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-<link rel="stylesheet" href="{% static 'assets/css/templatemo-stand-blog.css' %}">
-<link rel="stylesheet" href="{% static 'assets/css/owl.css' %}">
-<link rel="stylesheet" href="{% static 'assets/css/styles.css' %}">
-
+  <!-- Additional CSS Files -->
+  <link rel="stylesheet" href="{% static 'assets/css/fontawesome.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="{% static 'assets/css/templatemo-stand-blog.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/css/owl.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/css/styles.css' %}">
 </head>
 
 <body>
-  {%include 'header.html'%}
-
+  {% include 'header.html' %}
 
   <div class="container mt-5 carousel">
     <div id="carouselExampleCaptions" class="carousel slide">
@@ -52,7 +47,7 @@
       <div class="carousel-inner">
         <div class="carousel-item active">
           <img src="{% static 'assets/images/INFO05.jpg' %}" alt="image1">
-          <div class="carousel-caption ">
+          <div class="carousel-caption">
             <h1 style="color: #30b5f3;">PROGRAMADOR</h1>
           </div>
         </div>
@@ -81,25 +76,25 @@
           </div>
         </div>
       </div>
-<!-- Botão Anterior (Previous) -->
-<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-  <svg width="120" height="120" viewBox="0 0 16 16" fill="#30b5f3" xmlns="http://www.w3.org/2000/svg">
-    <path fill-rule="evenodd" d="M11.354 3.646a.5.5 0 0 1 0 .708L7.707 8l3.647 3.646a.5.5 0 1 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 0 1 .708 0z"/>
-  </svg>
-  <span class="visually-hidden">Previous</span>
-</button>
 
-<!-- Botão Próximo (Next) -->
-<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-  <svg width="120" height="120" viewBox="0 0 16 16" fill="#30b5f3" xmlns="http://www.w3.org/2000/svg">
-    <path fill-rule="evenodd" d="M4.646 3.646a.5.5 0 0 1 .708 0l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 1 1-.708-.708L8.293 8 4.646 4.354a.5.5 0 0 1 0-.708z"/>
-  </svg>
-  <span class="visually-hidden">Next</span>
-</button>
+      <!-- Botão Anterior (Previous) -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        <svg width="120" height="120" viewBox="0 0 16 16" fill="#30b5f3" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd"
+            d="M11.354 3.646a.5.5 0 0 1 0 .708L7.707 8l3.647 3.646a.5.5 0 1 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 0 1 .708 0z" />
+        </svg>
+        <span class="visually-hidden">Previous</span>
+      </button>
 
+      <!-- Botão Próximo (Next) -->
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+        <svg width="120" height="120" viewBox="0 0 16 16" fill="#30b5f3" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd"
+            d="M4.646 3.646a.5.5 0 0 1 .708 0l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 1 1-.708-.708L8.293 8 4.646 4.354a.5.5 0 0 1 0-.708z" />
+        </svg>
+        <span class="visually-hidden">Next</span>
+      </button>
 
-      
-      
     </div>
   </div>
 
@@ -107,31 +102,30 @@
   <div class="container mt-5">
     <h5>MINHAS POSTAGENS</h5>
     <hr>
-    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-1" class="blog-posts">
+    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-1 blog-posts">
 
       {% for post in posts|slice:"0:3" %}
       <div class="col col-lg-4 col-md-6 col-12 mb-2 blog-post">
         <img src="{{media_url}}{{post.image}}" alt="" width="100%" height="300px">
-        <div class=" px-3 py-5 shadow">
-        <a href="{% url 'post' post.id %}" class="text-decoration-none text-dark">
-          <span class="text-white bg-info text-center rounded-3 mt-5" style="padding: 8px;">{{post.category}}</span>
-          <h5 class="mt-4">{{post.postname}}</h5>
-        </a>
-        <form method="post" action="{% url 'increaselikes' post.id %}">
-          {% csrf_token %}
-          <button class="float-right small" type="submit"
-            style="border: none; background: transparent; font-size: 25px;"><i
-              class="fa fa-heart text-danger"></i></button>
-        </form>
-
-        <p>{{post.content|slice:"0:100"}}...</p>
-        <p class="small text-primary">{{post.time}} </p>
+        <div class="px-3 py-5 shadow">
+          <a href="{% url 'myapp:post' post.id %}" class="text-decoration-none text-dark">
+            <span class="text-white bg-info text-center rounded-3 mt-5" style="padding: 8px;">{{post.category}}</span>
+            <h5 class="mt-4">{{post.postname}}</h5>
+          </a>
+          <form method="post" action="{% url 'myapp:increaselikes' post.id %}">
+            {% csrf_token %}
+            <button class="float-right small" type="submit"
+              style="border: none; background: transparent; font-size: 25px;"><i
+                class="fa fa-heart text-danger"></i></button>
+          </form>
+          <p>{{post.content|slice:"0:100"}}...</p>
+          <p class="small text-primary">{{post.time}}</p>
+        </div>
       </div>
+      {% endfor %}
     </div>
-    {% endfor %}
-  </div>
-  <a class="text-danger text-decoration-none" href="{% url 'profile' user.id %}" style="cursor:pointer;">Ver tudo
-    >></a>
+    <a class="text-danger text-decoration-none" href="{% url 'myapp:profile' user.id %}" style="cursor:pointer;">Ver tudo
+      >></a>
   </div>
   {% endif %}
 
@@ -139,29 +133,26 @@
     <div class="container">
       <h3 class="mb-2" style="color: #30b5f3; font-size: 30px; font-weight: bold;">POSTAGENS RECENTES</h3>
       <hr>
-      <div class=" row">
+      <div class="row">
         <div class="col-lg-8">
           <div class="all-blog-posts">
             <div class="row">
-
               {% for post in top_posts|slice:"0:7" %}
-              <div class="col col-lg-6 col-12 pb-2 blog-post ">
+              <div class="col col-lg-6 col-12 pb-2 blog-post">
                 <img src="{{media_url}}{{post.image}}" alt="" class="img-fluid" width="100%">
                 <div class="px-3 py-5 shadow">
-                  <a href="{% url 'post' post.id %}" class="text-decoration-none text-dark mb-3">
-                    <span class="text-white bg-info text-center rounded-3 mt-5"
-                      style="padding: 8px;">{{post.category}}</span>
+                  <a href="{% url 'myapp:post' post.id %}" class="text-decoration-none text-dark mb-3">
+                    <span class="text-white bg-info text-center rounded-3 mt-5" style="padding: 8px;">{{post.category}}</span>
                     <h5 class="mt-4">{{post.postname}}</h5>
                   </a>
-                  <form method="post" action="{% url 'increaselikes' post.id %}">
+                  <form method="post" action="{% url 'myapp:increaselikes' post.id %}">
                     {% csrf_token %}
                     <button class="float-right small" type="submit"
                       style="border: none; background: transparent; font-size: 25px;"><i
                         class="fa fa-heart text-danger"></i></button>
                   </form>
-
                   <p class="mt-2">{{post.content|slice:"0:100"}}...</p>
-                  <p class="small text-primary">{{post.time}} </p>
+                  <p class="small text-primary">{{post.time}}</p>
                 </div>
               </div>
               {% endfor %}
@@ -178,23 +169,19 @@
                   </div>
                   <div class="content">
                     <ul>
-
-                      {% for post in recent_posts|slice:"0:" %}
+                      {% for post in recent_posts %}
                       <li>
                         <img src="{{media_url}}{{post.image}}" class="img-fluid" alt="" width="100%">
-                        <a href="post-details.html">
-                          <a href="{% url 'post' post.id %}" class="text-decoration-none text-dark">
-                            <h5>{{post.postname}}</h5>
-                          </a>
-                          <span>{{post.time}}</span>
+                        <a href="{% url 'myapp:post' post.id %}" class="text-decoration-none text-dark">
+                          <h5>{{post.postname}}</h5>
                         </a>
+                        <span>{{post.time}}</span>
                       </li>
                       {% endfor %}
                     </ul>
                   </div>
                 </div>
               </div>
-
             </div>
           </div>
         </div>
@@ -202,9 +189,7 @@
     </div>
   </section>
 
-
   {% include 'footer.html' %}
-
 
   <!-- Bootstrap core JavaScript -->
   <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
@@ -223,19 +208,16 @@
   <script src="{% static 'assets/js/isotope.js' %}"></script>
   <script src="{% static 'assets/js/accordions.js' %}"></script>
 
-
   <script language="text/Javascript">
     cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
-    function clearField(t) {                   //declaring the array outside of the
-      if (!cleared[t.id]) {                      // function makes it static and global
-        cleared[t.id] = 1;  // you could use true and false, but that's more typing
-        t.value = '';         // with more chance of typos
+    function clearField(t) {
+      if (!cleared[t.id]) {
+        cleared[t.id] = 1;
+        t.value = '';
         t.style.color = '#fff';
       }
     }
-
   </script>
 
 </body>
-
 </html>
