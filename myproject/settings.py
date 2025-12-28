@@ -21,6 +21,7 @@ ALLOWED_HOSTS = config(
     cast=lambda v: [host.strip() for host in v.split(",")]
 )
 
+
 # ======================================================
 # APPLICATIONS
 # ======================================================
@@ -76,7 +77,11 @@ TEMPLATES = [
 # DATABASE
 # ======================================================
 DATABASES = {
-    "default": dj_database_url.parse(config("DATABASE_URL"))
+    "default": dj_database_url.parse(
+        config("DATABASE_URL"),
+        conn_max_age=600,
+        ssl_require=True
+    )
 }
 
 # ======================================================
@@ -95,6 +100,7 @@ AUTH_PASSWORD_VALIDATORS = [
 LANGUAGE_CODE = "pt-br"
 TIME_ZONE = "America/Sao_Paulo"
 USE_I18N = True
+USE_L10N = True
 USE_TZ = True
 
 # ======================================================
@@ -104,6 +110,17 @@ STATIC_URL = "/static/"
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
 # ======================================================
+# MEDIA FILES
+# ======================================================
+MEDIA_URL = "/media/"
+MEDIA_ROOT = BASE_DIR / "media"
+
+# ======================================================
 # DEFAULT FIELD
 # ======================================================
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# ======================================================
+# LOCALE
+# ======================================================
+LOCALE_PATHS = [BASE_DIR / "locale"]
